@@ -18,20 +18,37 @@
 // '2bna0p1mp2osl0e' => 'apple'
 // '0y4akjfes' => 'yes'
 
-const decoder = code => {
-    let splitStr = code.split('')
-    let result = ''
+
+
+const decoder= function(string){
+
+  let splitString=string.split('');
+  let jumpNewString = "";
   
-    for (let i = 0; i < splitStr.length; i++) {
-      if (!isNaN(+splitStr[i])) {
-        i += +splitStr[i]
-      } else {
-        result += splitStr[i]
-      }
+  for (let i=0; i<splitString.length ; i++){
+  
+    if(!(0,1,2,3,4,5,6,7,8,9) === splitString[i]){
+        jumpNewString += splitString[i]
+    }else{
+      return splitString;
     }
+  } return jumpNewString;
+}
+
+// const decoder = code => {
+//     let splitStr = code.split('')
+//     let result = ''
   
-    return result
-  }
+//     for (let i = 0; i < splitStr.length; i++) {
+//       if (!isNaN(+splitStr[i])) {
+//         i += +splitStr[i]
+//       } else {
+//         result += splitStr[i]
+//       }
+//     }
+  
+//     return result
+//   }
   
   // decoder('0y4akjfes')
   // decoder('0h2xce5ngbrdy')
